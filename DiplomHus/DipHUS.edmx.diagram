@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6405e4a5ecd74626831e3341e0755a46" Name="Diagram1">
+        <EntityTypeShape EntityType="dp_hus_dipModel.MestoRemonta" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dp_hus_dipModel.Oboryduvanie" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dp_hus_dipModel.Podrazdelenie" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dp_hus_dipModel.Role" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dp_hus_dipModel.Status" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dp_hus_dipModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dp_hus_dipModel.Type" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="dp_hus_dipModel.User" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dp_hus_dipModel.Zayavka" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="dp_hus_dipModel.FK_MestoRemonta_Podrazdelenie" ManuallyRouted="false" />
+        <AssociationConnector Association="dp_hus_dipModel.FK_Zayavka_MestoRemonta" ManuallyRouted="false" />
+        <AssociationConnector Association="dp_hus_dipModel.FK_Zayavka_Oboryduvanie" ManuallyRouted="false" />
+        <AssociationConnector Association="dp_hus_dipModel.FK_User_Podrazdelenie" ManuallyRouted="false" />
+        <AssociationConnector Association="dp_hus_dipModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="dp_hus_dipModel.FK_Zayavka_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="dp_hus_dipModel.FK_Zayavka_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="dp_hus_dipModel.FK_Zayavka_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
