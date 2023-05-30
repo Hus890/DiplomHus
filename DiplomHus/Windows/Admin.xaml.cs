@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using Report = DiplomHus.Zayavka;
-
+//Привет
 namespace DiplomHus.Windows
 {
     /// <summary>
