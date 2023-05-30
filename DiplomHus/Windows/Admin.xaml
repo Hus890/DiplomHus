@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="Admin" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="279*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" Grid.Row="2" Name="dgZayavki" ItemsSource="{Binding Zayavki}" ColumnWidth="*"
+            SelectedItem="{Binding SelectedReport}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding ID_Zayavka}" />
+                <DataGridTextColumn Header="Заказчик" Binding="{Binding User.Name}" />
+                <DataGridTextColumn Header="Подразделение" Binding="{Binding User.Podrazdelenie.Name}" />
+                <DataGridTextColumn Header="Описание" Binding="{Binding Opisanie}" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" />
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}" />
+                <DataGridTextColumn Header="Инвентарный номер" Binding="{Binding Oboryduvanie.InventoryNumber}" />
+                <DataGridTextColumn Header="Исполнитель" Binding="{Binding MasterName}" />
+                <DataGridTextColumn Header="Комментарий по проделанной работе" Binding="{Binding ComentsFinishWork}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnDel" Content="Удалить"  HorizontalAlignment="Left" Margin="660,0,0,0" Grid.Row="3" VerticalAlignment="Center" Click="btnDel_Click"/>
+        <TextBox TextChanged="tbPoisk_TextChanged" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" x:Name="tbPoisk" HorizontalAlignment="Left" Margin="652,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Поиск:" HorizontalAlignment="Left" Margin="598,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <Button Click="btnRedact_Click" x:Name="btnRedact" Content="Редактирование" HorizontalAlignment="Left" Margin="544,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
     </Grid>
 </Window>

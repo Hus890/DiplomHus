@@ -23,6 +23,7 @@ namespace DiplomHus.Windows
     {
         public User User { get; set; }
 
+        // инициализация типа и инвентарного номера
         public Zayavka()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace DiplomHus.Windows
                 .LastOrDefault()?.ID_Zayavka ?? 0) + 1).ToString();
         }
 
+        // создание заявки
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var oborudovanie = dp_hus_dipEntities2
@@ -59,7 +61,7 @@ namespace DiplomHus.Windows
                 Oboryduvanie = oborudovanie,
                 Phone = tbNumber.Text,
                 Opisanie = tbOpisanie.Text,
-                Status = new Status { Name = "Новый" },
+                Status = dp_hus_dipEntities2.GetContext().Status.First(x => x.Name == "Новый"),
                 Type = type,
                 Date = DateTime.Now,
                 MestoRemonta = mestoRemonta ?? new MestoRemonta
@@ -74,9 +76,11 @@ namespace DiplomHus.Windows
             };
             dp_hus_dipEntities2.GetContext().Zayavka.Add(newZayavka);
             dp_hus_dipEntities2.GetContext().SaveChanges();
-            MessageBox.Show("Данные добавлены!");
+            DialogResult = true;
+            Close();
         }
 
+        // метод ищет соответствующее имя оборудования по его инвертарному номеру
         private void tbInvetoryNumer_TextChanged(object sender, TextChangedEventArgs e)
         {
             var oborudovatie = dp_hus_dipEntities2
@@ -86,6 +90,7 @@ namespace DiplomHus.Windows
             tborodyduvanie.Text = oborudovatie != null ? oborudovatie.Name : string.Empty;
         }
 
+        // инициализация подразделения и фио в шапке окна
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             tbPodrazdelenie.Text = User.Podrazdelenie.Name;

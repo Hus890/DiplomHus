@@ -33,5 +33,7 @@ namespace DiplomHus
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zayavka> Zayavka { get; set; }
+
+        public override string ToString() => $"{Patronomyc}{Name}{Surname}";
     }
 }

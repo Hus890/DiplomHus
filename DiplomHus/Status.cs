@@ -25,5 +25,7 @@ namespace DiplomHus
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zayavka> Zayavka { get; set; }
+
+        public override string ToString() => Name;
     }
 }

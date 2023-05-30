@@ -106,6 +106,9 @@
     <Compile Include="Windows\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Redact.xaml.cs">
+      <DependentUpon>Redact.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Zakaz.xaml.cs">
       <DependentUpon>Zakaz.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Redact.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

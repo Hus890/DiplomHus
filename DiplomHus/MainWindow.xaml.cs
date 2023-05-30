@@ -39,15 +39,16 @@ namespace DiplomHus
             {
                 // открываем окно админа
 
-                var newAdmin = new Admin { AuthorizatedUser = queryUser };
+                var newAdmin = new Admin { AuthorizatedUser = queryUser, Owner = this };
                 newAdmin.Show();
                 this.Hide();
             }
             else if (queryUser.Role.Name == "User")
             {
-                var newWnd = new Zakaz { AuthorizatedUser = queryUser };
+                var newWnd = new Zakaz(queryUser) { Owner = this };
                 newWnd.Show();
                 this.Hide();
+                // открываем окно заказчика
             }
         }
     }
