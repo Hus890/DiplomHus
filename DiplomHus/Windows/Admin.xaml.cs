@@ -122,12 +122,12 @@ namespace DiplomHus.Windows
                 ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Отчет");
 
                 // Заголовки столбцов
-                worksheet.Cells[1, 1].Value = "ID Заявки";
-                worksheet.Cells[1, 2].Value = "ID Пользователя";
-                worksheet.Cells[1, 3].Value = "ID Типа";
-                worksheet.Cells[1, 4].Value = "ID Оборудования";
-                worksheet.Cells[1, 5].Value = "ID Места ремонта";
-                worksheet.Cells[1, 6].Value = "ID Статуса";
+                worksheet.Cells[1, 1].Value = "Номер Заявки";
+                worksheet.Cells[1, 2].Value = "Номер Пользователя";
+                worksheet.Cells[1, 3].Value = "Тип ремонта";
+                worksheet.Cells[1, 4].Value = "Инвентарный номер";
+                worksheet.Cells[1, 5].Value = "Местоположение";
+                worksheet.Cells[1, 6].Value = "Статус";
                 worksheet.Cells[1, 7].Value = "Телефон";
                 worksheet.Cells[1, 8].Value = "Дата";
                 worksheet.Cells[1, 9].Value = "Описание";
@@ -160,6 +160,11 @@ namespace DiplomHus.Windows
                 FileInfo fileInfo = new FileInfo(savePath);
                 excelPackage.SaveAs(fileInfo);
             }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

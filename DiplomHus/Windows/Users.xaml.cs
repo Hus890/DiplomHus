@@ -56,5 +56,10 @@ namespace DiplomHus.Windows
             }
             else MessageBox.Show("Выберите пользователя");
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

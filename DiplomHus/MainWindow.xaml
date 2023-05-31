@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus"
         mc:Ignorable="d"
-        Title="Авторизация" Background="AliceBlue" Height="400" Width="450" FontFamily="Comic Sans MS" ResizeMode="NoResize" Icon="/Октябрь-Нейва.jpg">
+        Title="Авторизация" WindowStartupLocation="CenterScreen" Background="AliceBlue" Height="400" Width="450" FontFamily="Comic Sans MS" ResizeMode="NoResize" Icon="/Октябрь-Нейва.jpg" FontSize="18">
     
     <Grid>
         

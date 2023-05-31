@@ -37,7 +37,7 @@ namespace DiplomHus.Windows
             var oborudovanie = dp_hus_dipEntities2.GetContext().Oboryduvanie.FirstOrDefault(x => x.InventoryNumber == tbInvetoryNumer.Text);
             if (oborudovanie == null)
             {
-                MessageBox.Show("нет табеля");
+                MessageBox.Show("Пожалуйста заполните все поля");
                 return;
             }
             var mestoRemonta = dp_hus_dipEntities2.GetContext() .MestoRemonta.FirstOrDefault(x => x.Korpus == tbKorpus.Text && x.Floor == tbFloor.Text && x.Room == tbRoom.Text);
@@ -79,6 +79,11 @@ namespace DiplomHus.Windows
         {
             tbPodrazdelenie.Text = User.Podrazdelenie.Name;
             tbZakazchik.Text = $"{User.Surname} {User.Name} {User.Patronomyc}";
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

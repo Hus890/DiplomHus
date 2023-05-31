@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
         mc:Ignorable="d"
-         Height="600" Width="800" MinWidth="300" MinHeight="300" FontFamily="Comic Sans MS" FontSize="16">
+         Height="650" Background="AliceBlue"   Icon="/Октябрь-Нейва.jpg" WindowStartupLocation="CenterScreen"  Width="800" MinWidth="500" MinHeight="300" FontFamily="Comic Sans MS" FontSize="18">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition Height="80"/>
-            <RowDefinition Height="373.324"/>
+            <RowDefinition Height="366.092"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
-        <Label Content="Заявки на ослуживание средств вычислительной техники" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Center"/>
-        <Button x:Name="btnCreateZayavka" Content="Создать заявку" HorizontalAlignment="Left" Margin="22,326,0,0" Grid.Row="2" VerticalAlignment="Top" Width="178" Click="btnCreateZayavka_Click"/>
-        <Label Content="Мои заявки:" HorizontalAlignment="Left" Margin="10,21,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <DataGrid Grid.Row="2" AutoGenerateColumns="False" 
+        <Label Content="Заявки на ослуживание средств вычислительной техники" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Width="150" Height="30" Background="LightBlue" x:Name="btnCreateZayavka" Content="Создать заявку" HorizontalAlignment="Left" Margin="460,14,0,0" Grid.Row="3" VerticalAlignment="Top"  Click="btnCreateZayavka_Click"/>
+        <Label Content="Мои заявки:" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <DataGrid Background="LightBlue" Grid.Row="2" AutoGenerateColumns="False" 
             ColumnWidth="*" IsReadOnly="True" SelectedItem="{Binding SelectedReport}"
-            Name="dgZayavki" ItemsSource="{Binding Zayavki}" Margin="0,69,0,140">
+            Name="dgZayavki" ItemsSource="{Binding Zayavki}" Margin="20 50 20 20">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Zayavka}" />
                 <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=dd.MM.yyyy}"/>
@@ -28,13 +29,12 @@
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnDel" Content="Удалить" Click="btnDel_Click" HorizontalAlignment="Left" Margin="293,326,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <Label Content="Поиск:" HorizontalAlignment="Left" Margin="562,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbPoisk" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" TextChanged="tbPoisk_TextChanged" HorizontalAlignment="Left" Margin="636,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <Label Content="Подразделение:"  HorizontalAlignment="Left" Margin="22,20,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbPodrazdelenie" IsReadOnly="True" Text="{Binding AuthorizatedUser.Podrazdelenie.Name}" HorizontalAlignment="Left" Margin="164,0,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Center" Width="120"/>
-        <Label Content="ФИО" HorizontalAlignment="Left" Margin="327,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" IsReadOnly="True" Margin="388,0,0,0" Grid.Row="1" TextWrapping="Wrap" x:Name="tbFio" VerticalAlignment="Center" Width="120">
+        <Label Content="Поиск:" HorizontalAlignment="Left" Margin="564,26,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox  Background="LightBlue" x:Name="tbPoisk" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" TextChanged="tbPoisk_TextChanged" HorizontalAlignment="Left" Margin="641,30,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+        <Label Content="Подразделение:"  HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBox Background="LightBlue" x:Name="tbPodrazdelenie" IsReadOnly="True" Text="{Binding AuthorizatedUser.Podrazdelenie.Name}" HorizontalAlignment="Left" Margin="154,30,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="151"/>
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="310,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBox  Background="LightBlue" HorizontalAlignment="Left" IsReadOnly="True" Margin="373,0,0,0" Grid.Row="1" TextWrapping="Wrap" x:Name="tbFio" VerticalAlignment="Center" Height="40" Width="173">
             <TextBox.Text>
                 <MultiBinding StringFormat="{}{0} {1} {2}">
                     <Binding Path="AuthorizatedUser.Name" />
@@ -43,6 +43,7 @@
                 </MultiBinding>
             </TextBox.Text>
         </TextBox>
+        <Button x:Name="btnBack" Width="150" Height="30" Background="LightBlue" Content="Назад" HorizontalAlignment="Left" Margin="630,14,0,0" Grid.Row="3" VerticalAlignment="Top" Click="btnBack_Click"/>
 
     </Grid>
 </Window>

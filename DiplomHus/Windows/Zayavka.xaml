@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
         mc:Ignorable="d"
-        Title="Zayavka" Loaded="Window_Loaded" Height="450" Width="650" FontFamily="Comic Sans MS" FontSize="16" ResizeMode="NoResize">
+        Title="Ремонт отдел 36" Background="AliceBlue"   Icon="/Октябрь-Нейва.jpg" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Height="500" Width="750" FontFamily="Comic Sans MS" FontSize="18" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="69"/>
@@ -14,30 +14,30 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="Создание заявки на обслуживание СФТ" HorizontalAlignment="Left" Margin="102,0,0,0" VerticalAlignment="Center"/>
-        <Label Content="Номер заявки" HorizontalAlignment="Left" Margin="16,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="90" FontSize="12"/>
-        <TextBox x:Name="tbNumerZayavka" IsReadOnly="True" HorizontalAlignment="Left" Margin="111,13,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="198" Height="20"/>
-        <Label Content="Подразделение" HorizontalAlignment="Left" Margin="10,51,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="90" FontSize="12" FontFamily="Comic Sans MS"/>
-        <TextBox x:Name="tbPodrazdelenie" IsReadOnly="True" HorizontalAlignment="Left" Margin="106,54,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="85" Height="20"/>
-        <Label Content="Заказчик" HorizontalAlignment="Left" Margin="209,51,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="90" FontSize="12"/>
-        <TextBox x:Name="tbZakazchik" IsReadOnly="True"  HorizontalAlignment="Left" Margin="276,54,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="201" Height="20"/>
-        <Label Content="Тип" HorizontalAlignment="Left" Margin="330,12,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="46" FontSize="12"/>
-        <ComboBox x:Name="cmbType" HorizontalAlignment="Left" Margin="428,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="202" Height="23"/>
-        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="10,82,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="96" FontSize="12" FontFamily="Comic Sans MS"/>
-        <TextBox x:Name="tbNumber" HorizontalAlignment="Left" Margin="106,87,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="85" Height="20"/>
-        <Label Content="Инвентарный номер" HorizontalAlignment="Left" Margin="10,132,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="131" FontSize="12" FontFamily="Comic Sans MS"/>
-        <Label Content="Корпус" HorizontalAlignment="Left" Margin="202,85,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="54" FontSize="12" FontFamily="Comic Sans MS"/>
-        <Label Content="Этаж" HorizontalAlignment="Left" Margin="299,88,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="71" FontSize="12" FontFamily="Comic Sans MS"/>
-        <Label Content="Комната" HorizontalAlignment="Left" Margin="414,88,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="72" FontSize="12" FontFamily="Comic Sans MS"/>
-        <TextBox x:Name="tbKorpus" HorizontalAlignment="Left" Margin="261,89,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="27" Height="24"/>
-        <TextBox x:Name="tbFloor" HorizontalAlignment="Left" Margin="353,89,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="34" Height="24"/>
-        <TextBox x:Name="tbRoom" HorizontalAlignment="Left" Margin="540,93,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="33" Height="20"/>
-        <TextBox x:Name="tbInvetoryNumer" TextChanged="tbInvetoryNumer_TextChanged"  HorizontalAlignment="Left" Margin="141,138,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="198" Height="20"/>
+        <Label Content="Создание заявки на обслуживание СФТ" HorizontalAlignment="Left" Margin="197,0,0,0" VerticalAlignment="Center"/>
+        <Label Content="Номер заявки" HorizontalAlignment="Left" Margin="16,7,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="90" FontSize="12"/>
+        <TextBox Background="LightBlue" x:Name="tbNumerZayavka" IsReadOnly="True" HorizontalAlignment="Left" Margin="120,10,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="188" Height="30"/>
+        <Label Content="Подразделение" HorizontalAlignment="Left" Margin="10,43,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="105" FontSize="12" FontFamily="Comic Sans MS"/>
+        <TextBox Background="LightBlue" x:Name="tbPodrazdelenie" IsReadOnly="True" HorizontalAlignment="Left" Margin="120,48,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="188" Height="30"/>
+        <Label Content="Заказчик" HorizontalAlignment="Left" Margin="355,45,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="90" FontSize="12"/>
+        <TextBox Background="LightBlue"  x:Name="tbZakazchik" IsReadOnly="True"  HorizontalAlignment="Left" Margin="450,51,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="279" Height="30"/>
+        <Label Content="Тип ремонта" HorizontalAlignment="Left" Margin="353,9,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="89" FontSize="12"/>
+        <ComboBox x:Name="cmbType" HorizontalAlignment="Left" Margin="450,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="279" Height="30"/>
+        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="14,91,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="111" FontSize="12" FontFamily="Comic Sans MS"/>
+        <TextBox Background="LightBlue" x:Name="tbNumber" HorizontalAlignment="Left" Margin="129,95,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="85" Height="30"/>
+        <Label Content="Инвентарный номер" HorizontalAlignment="Left" Margin="10,129,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="131" FontSize="12" FontFamily="Comic Sans MS"/>
+        <Label Content="Корпус" HorizontalAlignment="Left" Margin="219,89,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="54" FontSize="12" FontFamily="Comic Sans MS"/>
+        <Label Content="Этаж" HorizontalAlignment="Left" Margin="388,91,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="40" FontSize="12" FontFamily="Comic Sans MS"/>
+        <Label Content="Комната" HorizontalAlignment="Left" Margin="554,89,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="72" FontSize="12" FontFamily="Comic Sans MS"/>
+        <TextBox Background="LightBlue" x:Name="tbKorpus" HorizontalAlignment="Left" Margin="282,95,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="93" Height="30"/>
+        <TextBox Background="LightBlue" x:Name="tbFloor" HorizontalAlignment="Left" Margin="438,94,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="104" Height="30"/>
+        <TextBox Background="LightBlue" x:Name="tbRoom" HorizontalAlignment="Left" Margin="619,95,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="110" Height="30"/>
+        <TextBox Background="LightBlue" x:Name="tbInvetoryNumer" TextChanged="tbInvetoryNumer_TextChanged"  HorizontalAlignment="Left" Margin="147,135,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="198" Height="30"/>
         <Label Content="Описание" HorizontalAlignment="Left" Margin="5,172,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="90" FontSize="12"/>
-        <TextBox x:Name="tbOpisanie" HorizontalAlignment="Left" Margin="100,163,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="486" Height="127"/>
-        <Button Content="Отправить заявку" HorizontalAlignment="Left" Margin="100,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Выйти" HorizontalAlignment="Left" Margin="502,14,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <TextBox IsReadOnly="True" x:Name="tborodyduvanie"  HorizontalAlignment="Left" Margin="388,135,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="198" Height="20"/>
+        <TextBox Background="LightBlue" x:Name="tbOpisanie" HorizontalAlignment="Left" Margin="81,173,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="648" Height="117"/>
+        <Button Width="198" Height="30" Background="LightBlue"  Content="Отправить заявку" HorizontalAlignment="Left" Margin="355,0,0,0" Grid.Row="2" VerticalAlignment="Center" Click="Button_Click" FontSize="16"/>
+        <Button x:Name="btnBack" Width="150" Height="30" Background="LightBlue" Content="Отмена" HorizontalAlignment="Left" Margin="579,0,0,0" Grid.Row="2" VerticalAlignment="Center" FontSize="16" Click="btnBack_Click"/>
+        <TextBox Background="LightBlue" IsReadOnly="True" x:Name="tborodyduvanie"  HorizontalAlignment="Left" Margin="355,135,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="374" Height="30"/>
 
     </Grid>
 </Window>

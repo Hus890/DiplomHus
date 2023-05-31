@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
         mc:Ignorable="d"
-        Title="Users" Height="450" Width="800">
+         Background="AliceBlue"   Icon="/Октябрь-Нейва.jpg"  WindowStartupLocation="CenterScreen" Height="500" Width="800" FontFamily="Comic Sans MS" FontSize="18">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="121*"/>
-            <RowDefinition Height="181*"/>
-            <RowDefinition Height="132*"/>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="279*"/>
+            <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="1" ColumnWidth="*" SelectedItem="{Binding SelectedUser}" ItemsSource="{Binding UsersCollection}" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Background="LightBlue" Margin="20" Grid.Row="1" ColumnWidth="*" SelectedItem="{Binding SelectedUser}" ItemsSource="{Binding UsersCollection}" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID_User}" />
+                <DataGridTextColumn Header="Номер пользователя" Binding="{Binding ID_User}" />
                 <DataGridTextColumn Header="Подразделение" Binding="{Binding Podrazdelenie.Name}"/>
                 <DataGridTextColumn Header="Роль" Binding="{Binding Role.Name}" />
                 <DataGridTextColumn Header="Логин" Binding="{Binding Login}" />
@@ -24,7 +24,9 @@
                 <DataGridTextColumn Header="Отчество" Binding="{Binding Patronomyc}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnRedact" Content="Редактирование" HorizontalAlignment="Left" Margin="93,66,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnRedact_Click"/>
-        <Button x:Name="btnDel" Content="Удаление" HorizontalAlignment="Left" Margin="248,66,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnDel_Click"/>
+        <Button Width="150" Height="30" Background="LightBlue" x:Name="btnRedact" Content="Редактирование" HorizontalAlignment="Left" Margin="20,22,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnRedact_Click"/>
+        <Button Width="150" Height="30" Background="LightBlue" x:Name="btnDel" Content="Удаление" HorizontalAlignment="Left" Margin="195,22,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnDel_Click"/>
+        <Label Content="Пользователи" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center"/>
+        <Button x:Name="btnBack" Content="Назад" Width="150" Height="30" Background="LightBlue" HorizontalAlignment="Left" Margin="630,22,0,0" Grid.Row="2" VerticalAlignment="Top" Click="btnBack_Click"/>
     </Grid>
 </Window>

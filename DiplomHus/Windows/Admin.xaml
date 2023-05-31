@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
         mc:Ignorable="d"
-        Title="Просмотр заявок" Background="AliceBlue" Height="450" Width="800">
+        Title="Просмотр заявок"  Icon="/Октябрь-Нейва.jpg" WindowStartupLocation="CenterScreen" Background="AliceBlue" Height="500" Width="800" FontFamily="Comic Sans MS" FontSize="16">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="52*"/>
             <RowDefinition Height="63*"/>
             <RowDefinition Height="279*"/>
-            <RowDefinition Height="40*"/>
+            <RowDefinition Height="60*"/>
         </Grid.RowDefinitions>
         <DataGrid Background="LightBlue" AutoGenerateColumns="False" Grid.Row="2" Name="dgZayavki" ItemsSource="{Binding Zayavki}" ColumnWidth="*"
-            SelectedItem="{Binding SelectedReport}" IsReadOnly="True">
+            SelectedItem="{Binding SelectedReport}" IsReadOnly="True" Margin="20">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Zayavka}" />
                 <DataGridTextColumn Header="Заказчик" Binding="{Binding User.Name}" />
@@ -27,11 +27,12 @@
                 <DataGridTextColumn Header="Комментарий по проделанной работе" Binding="{Binding ComentsFinishWork}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnDel" Content="Удалить"  HorizontalAlignment="Left" Margin="660,0,0,0" Grid.Row="3" VerticalAlignment="Center" Click="btnDel_Click"/>
-        <TextBox Background="LightBlue" TextChanged="tbPoisk_TextChanged" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" x:Name="tbPoisk" HorizontalAlignment="Left" Margin="652,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <Label Content="Поиск:" HorizontalAlignment="Left" Margin="598,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
-        <Button Click="btnRedact_Click" x:Name="btnRedact" Content="Редактирование" HorizontalAlignment="Left" Margin="544,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
-        <Button x:Name="BtnPolzovatel" Content="Добавить нового пользователя" HorizontalAlignment="Left" Margin="22,17,0,0" Grid.Row="1" VerticalAlignment="Top" Click="BtnPolzovatel_Click"/>
-        <Button x:Name="btnOtchet" Content="Отчет" HorizontalAlignment="Left" Margin="732,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="40" ButtonBase.Click="btnOtchet_Click"/>
+        <Button Width="150" Height="30" Background="LightBlue" x:Name="btnDel" Content="Удалить"  HorizontalAlignment="Left" Margin="200,15,15,15" Grid.Row="3" VerticalAlignment="Top" Click="btnDel_Click"/>
+        <TextBox Background="LightBlue" TextChanged="tbPoisk_TextChanged" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" x:Name="tbPoisk" HorizontalAlignment="Left" Margin="107,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="150"/>
+        <Label Content="Поиск:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="18" Grid.Row="1"/>
+        <Button Width="150" Height="30" Background="LightBlue" Click="btnRedact_Click" x:Name="btnRedact" Content="Редактирование" HorizontalAlignment="Left" Margin="20,15,15,15" Grid.Row="3" VerticalAlignment="Top"/>
+        <Button Width="150" Height="30"  Background="LightBlue" x:Name="btnOtchet" Content="Отчет" HorizontalAlignment="Right" Margin="20,15,15,15" Grid.Row="3" VerticalAlignment="Top" ButtonBase.Click="btnOtchet_Click"/>
+        <Label Content="Просмотр заявок пользователей" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="20"/>
+        <Button x:Name="btnBack"  Width="150" Height="30"  Background="LightBlue" Content="Назад" HorizontalAlignment="Left" Margin="450,15,15,15" Grid.Row="3" VerticalAlignment="Top" Click="btnBack_Click"/>
     </Grid>
 </Window>

@@ -57,19 +57,6 @@ namespace DiplomHus.Windows
             mainWnd.pasPassword.Clear();
             Owner.Show();
         }
-
-        // Удаление выбранного элемента
-        private void btnDel_Click(object sender, RoutedEventArgs e)
-        {
-            if (SelectedReport != null)
-            {
-                dp_hus_dipEntities2.GetContext().Zayavka.Remove(SelectedReport);
-                dp_hus_dipEntities2.GetContext().SaveChanges();
-                Zayavki.Remove(SelectedReport);
-            }
-            else MessageBox.Show("Выберите заявку");
-        }
-
         private void tbPoisk_TextChanged(object sender, TextChangedEventArgs e)
         {
             // Поиск 
@@ -94,6 +81,11 @@ namespace DiplomHus.Windows
         private void tbFio_TextChanged(object sender, TextChangedEventArgs e)
         {
             //-------------------------------
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();    
         }
     }
 }

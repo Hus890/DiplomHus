@@ -72,5 +72,10 @@ namespace DiplomHus.Windows
         {
             
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();    
+        }
     }
 }

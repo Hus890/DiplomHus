@@ -5,11 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
         mc:Ignorable="d"
-        Title="AdminMenu" Height="450" Width="800">
+        Title="Меню Администратора" Icon="/Октябрь-Нейва.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="400" Width="400" FontFamily="Comic Sans MS" FontSize="18">
     <Grid>
-        <Button x:Name="btnProsmort" Content="Просмотр заявок" HorizontalAlignment="Left" Margin="118,172,0,0" VerticalAlignment="Top" Click="btnProsmort_Click"/>
-        <Button x:Name="btnReg" Content="Регистрация" HorizontalAlignment="Left" Margin="238,172,0,0" VerticalAlignment="Top" Click="btnReg_Click"/>
-        <Button x:Name="btnUser" Content="Пользователи" HorizontalAlignment="Left" Margin="327,172,0,0" VerticalAlignment="Top" Width="89" Click="btnUser_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnProsmort"  Width="350" Height="30"  Background="LightBlue"  Content="Просмотр заявок" HorizontalAlignment="Left" Margin="20,44,0,0" VerticalAlignment="Top" Click="btnProsmort_Click" Grid.Row="1"/>
+        <Button x:Name="btnReg"  Width="150" Height="30"  Background="LightBlue" Content="Регистрация" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Click="btnReg_Click" Grid.Row="2"/>
+        <Button x:Name="btnUser"  Width="150" Height="30"  Background="LightBlue" Content="Пользователи" HorizontalAlignment="Right" Margin="0,45,20,0" VerticalAlignment="Top"  Click="btnUser_Click" Grid.Row="2"/>
+        <Label Content="Администрирование" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+        <Button x:Name="btnBack" Content="Назад"  Width="150" Height="30"  Background="LightBlue" HorizontalAlignment="Center" Margin="0,16,0,0" Grid.Row="3" VerticalAlignment="Center" Click="btnBack_Click"/>
 
     </Grid>
 </Window>

@@ -57,5 +57,10 @@ namespace DiplomHus.Windows
             Window wndUser = new Users();
             wndUser.ShowDialog();
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
