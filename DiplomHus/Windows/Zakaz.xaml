@@ -20,7 +20,7 @@
             Name="dgZayavki" ItemsSource="{Binding Zayavki}" Margin="0,69,0,140">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Zayavka}" />
-                <DataGridTextColumn Header="Дата" Binding="{Binding Date}" />
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
                 <DataGridTextColumn Header="Тип" Binding="{Binding Type.Name}" />
                 <DataGridTextColumn Header="Заказчик" Binding="{Binding User.Name}" />
                 <DataGridTextColumn Header="Инвентарный номер" Binding="{Binding Oboryduvanie.InventoryNumber}" />
@@ -37,9 +37,9 @@
         <TextBox HorizontalAlignment="Left" IsReadOnly="True" Margin="388,0,0,0" Grid.Row="1" TextWrapping="Wrap" x:Name="tbFio" VerticalAlignment="Center" Width="120">
             <TextBox.Text>
                 <MultiBinding StringFormat="{}{0} {1} {2}">
-                    <Binding Path="AuthorizatedUser.Patronomyc" />
                     <Binding Path="AuthorizatedUser.Name" />
                     <Binding Path="AuthorizatedUser.Surname" />
+                    <Binding Path="AuthorizatedUser.Patronomyc" />
                 </MultiBinding>
             </TextBox.Text>
         </TextBox>

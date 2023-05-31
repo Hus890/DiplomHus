@@ -59,19 +59,13 @@ namespace DiplomHus.Windows
         private void UpdateZayavki()
         {
             Zayavki.Clear();
-            foreach (var report in GetZayavki(SearchText?.ToLower() ?? string.Empty))
-                Zayavki.Add(report);
+            foreach (var report in GetZayavki(SearchText?.ToLower() ?? string.Empty))Zayavki.Add(report);
         }
 
         // метод ищущий все заявки совпадающих содержимым с поисковым текстом
         private IEnumerable<Report> GetZayavki(string text)
         {
-            return dp_hus_dipEntities2.GetContext().Zayavka
-                .ToList()
-                .Where(x => ($"{x.Date}{x.Type.Name}{x.Oboryduvanie.InventoryNumber}" +
-                    $"{x.Opisanie}{x.MasterName}{x.ComentsFinishWork}{x.Status.Name}")
-                    .ToLower()
-                    .Contains(text));
+            return dp_hus_dipEntities2.GetContext().Zayavka.ToList().Where(x => ($"{x.Date}{x.Type.Name}{x.Oboryduvanie.InventoryNumber}" +$"{x.Opisanie}{x.MasterName}{x.ComentsFinishWork}{x.Status.Name}") .ToLower().Contains(text));
         }
         
         // закрытие окна, показ окна авторизации
@@ -99,6 +93,12 @@ namespace DiplomHus.Windows
                 dp_hus_dipEntities2.GetContext().SaveChanges();
                 UpdateZayavki();
             }
+        }
+
+        private void BtnPolzovatel_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new Register();
+            window.ShowDialog();
         }
     }
 }

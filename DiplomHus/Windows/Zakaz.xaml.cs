@@ -32,9 +32,7 @@ namespace DiplomHus.Windows
         {
             InitializeComponent();
             AuthorizatedUser = user;
-            Zayavki = new ObservableCollection<Report>(dp_hus_dipEntities2.GetContext().Zayavka
-                .ToList()
-                .Where(x => x.User == AuthorizatedUser));
+            Zayavki = new ObservableCollection<Report>(dp_hus_dipEntities2.GetContext().Zayavka.ToList().Where(x => x.User == AuthorizatedUser));
             dgZayavki.Items.Clear();
             dgZayavki.ItemsSource = Zayavki;
             DataContext = this;
@@ -78,18 +76,18 @@ namespace DiplomHus.Windows
         private void UpdateZayavki()
         {
             Zayavki.Clear();
-            foreach (var report in GetZayavki(SearchText?.ToLower() ?? string.Empty))
-                Zayavki.Add(report);
+            foreach (var report in GetZayavki(SearchText?.ToLower() ?? string.Empty))Zayavki.Add(report);
         }
 
         // Берет текст и находит совпадения из бд
         private IEnumerable<Report> GetZayavki(string text)
         {
-            return dp_hus_dipEntities2.GetContext().Zayavka
-                .ToList()
-                .Where(x => $"{x.Date}{x.Type.Name}{x.Oboryduvanie.InventoryNumber}{x.Opisanie}"
-                    .ToLower()
-                    .Contains(text));
+            return dp_hus_dipEntities2.GetContext().Zayavka.ToList().Where(x => $"{x.Date}{x.Type.Name}{x.Oboryduvanie.InventoryNumber}{x.Opisanie}".ToLower().Contains(text));
+        }
+
+        private void tbFio_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //-------------------------------
         }
     }
 }

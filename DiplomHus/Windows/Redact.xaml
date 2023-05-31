@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
         mc:Ignorable="d"
-        Title="Redact" Height="450" Width="800">
+        Title="Редактирование" Height="400" Width="450" FontFamily="Comic Sans MS" FontSize="16">
     <Grid>
-        <ComboBox x:Name="cmbStatus" ItemsSource="{Binding Statuses}" SelectedItem="{Binding SelectedStatus}" HorizontalAlignment="Left" Margin="168,37,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Выберите статус" HorizontalAlignment="Left" Margin="35,41,0,0" VerticalAlignment="Top"/>
-        <Label Content="Ремонт" HorizontalAlignment="Left" Margin="48,109,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TbRemont" Text="{Binding Zayavka.ComentsFinishWork}" HorizontalAlignment="Left" Margin="168,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Click="Button_Click" Content="Ок" HorizontalAlignment="Left" Margin="85,230,0,0" VerticalAlignment="Top"/>
-        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" Margin="228,230,0,0" VerticalAlignment="Top"/>
-        <Label Content="Мастер" HorizontalAlignment="Left" Margin="61,172,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbMaster" Text="{Binding Zayavka.MasterName}" HorizontalAlignment="Left" Margin="179,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbStatus" ItemsSource="{Binding Statuses}" SelectedItem="{Binding SelectedStatus}" HorizontalAlignment="Left" Margin="148,33,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Выберите статус" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ремонт" HorizontalAlignment="Left" Margin="14,86,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TbRemont" Text="{Binding Zayavka.ComentsFinishWork}" HorizontalAlignment="Left" Margin="148,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" Height="67"/>
+        <Button Click="Button_Click" Content="Ок" HorizontalAlignment="Left" Margin="28,230,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" Margin="156,230,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Content="Мастер" HorizontalAlignment="Left" Margin="14,172,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbMaster" Text="{Binding Zayavka.MasterName}" HorizontalAlignment="Left" Margin="148,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="261" Height="28"/>
     </Grid>
 </Window>

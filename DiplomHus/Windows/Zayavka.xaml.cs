@@ -27,34 +27,21 @@ namespace DiplomHus.Windows
         public Zayavka()
         {
             InitializeComponent();
-            cmbType.ItemsSource = dp_hus_dipEntities2.GetContext().Type
-                .Select(x => x.Name)
-                .ToList();
-            tbNumerZayavka.Text = ((dp_hus_dipEntities2.GetContext().Zayavka
-                .ToList()
-                .LastOrDefault()?.ID_Zayavka ?? 0) + 1).ToString();
+            cmbType.ItemsSource = dp_hus_dipEntities2.GetContext().Type.Select(x => x.Name).ToList();
+            tbNumerZayavka.Text = ((dp_hus_dipEntities2.GetContext().Zayavka.ToList().LastOrDefault()?.ID_Zayavka ?? 0) + 1).ToString();
         }
 
         // создание заявки
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var oborudovanie = dp_hus_dipEntities2
-                .GetContext()
-                .Oboryduvanie
-                .FirstOrDefault(x => x.InventoryNumber == tbInvetoryNumer.Text);
+            var oborudovanie = dp_hus_dipEntities2.GetContext().Oboryduvanie.FirstOrDefault(x => x.InventoryNumber == tbInvetoryNumer.Text);
             if (oborudovanie == null)
             {
                 MessageBox.Show("нет табеля");
                 return;
             }
-            var mestoRemonta = dp_hus_dipEntities2
-                .GetContext()
-                .MestoRemonta
-                .FirstOrDefault(x => x.Korpus == tbKorpus.Text && x.Floor == tbFloor.Text && x.Room == tbRoom.Text);
-            var type = dp_hus_dipEntities2
-                .GetContext()
-                .Type
-                .First(x => x.Name == cmbType.SelectedValue.ToString());
+            var mestoRemonta = dp_hus_dipEntities2.GetContext() .MestoRemonta.FirstOrDefault(x => x.Korpus == tbKorpus.Text && x.Floor == tbFloor.Text && x.Room == tbRoom.Text);
+            var type = dp_hus_dipEntities2.GetContext().Type.First(x => x.Name == cmbType.SelectedValue.ToString());
             var newZayavka = new Request
             {
                 User = User,
@@ -83,10 +70,7 @@ namespace DiplomHus.Windows
         // метод ищет соответствующее имя оборудования по его инвертарному номеру
         private void tbInvetoryNumer_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var oborudovatie = dp_hus_dipEntities2
-                .GetContext()
-                .Oboryduvanie
-                .FirstOrDefault(x => x.InventoryNumber == tbInvetoryNumer.Text);
+            var oborudovatie = dp_hus_dipEntities2.GetContext().Oboryduvanie.FirstOrDefault(x => x.InventoryNumber == tbInvetoryNumer.Text);
             tborodyduvanie.Text = oborudovatie != null ? oborudovatie.Name : string.Empty;
         }
 
