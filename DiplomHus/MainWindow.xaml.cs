@@ -1,4 +1,5 @@
 ﻿using DiplomHus.Windows;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace DiplomHus
     {
         public MainWindow()
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             InitializeComponent();
         }
 
@@ -39,7 +41,7 @@ namespace DiplomHus
             {
                 // открываем окно админа
 
-                var newAdmin = new Admin { AuthorizatedUser = queryUser, Owner = this };
+                var newAdmin = new AdminMenu { AuthorizatedUser = queryUser, Owner = this };
                 newAdmin.Show();
                 this.Hide();
             }

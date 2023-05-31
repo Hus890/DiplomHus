@@ -20,7 +20,7 @@
             Name="dgZayavki" ItemsSource="{Binding Zayavki}" Margin="0,69,0,140">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Zayavka}" />
-                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=dd.MM.yyyy}"/>
                 <DataGridTextColumn Header="Тип" Binding="{Binding Type.Name}" />
                 <DataGridTextColumn Header="Заказчик" Binding="{Binding User.Name}" />
                 <DataGridTextColumn Header="Инвентарный номер" Binding="{Binding Oboryduvanie.InventoryNumber}" />

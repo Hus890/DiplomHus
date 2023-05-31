@@ -21,7 +21,7 @@
                 <DataGridTextColumn Header="Подразделение" Binding="{Binding User.Podrazdelenie.Name}" />
                 <DataGridTextColumn Header="Описание" Binding="{Binding Opisanie}" />
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" />
-                <DataGridTextColumn Header="Дата" Binding="{Binding Date}" />
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date,StringFormat=dd.MM.yyyy}" />
                 <DataGridTextColumn Header="Инвентарный номер" Binding="{Binding Oboryduvanie.InventoryNumber}" />
                 <DataGridTextColumn Header="Исполнитель" Binding="{Binding MasterName}" />
                 <DataGridTextColumn Header="Комментарий по проделанной работе" Binding="{Binding ComentsFinishWork}" />
@@ -32,5 +32,6 @@
         <Label Content="Поиск:" HorizontalAlignment="Left" Margin="598,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
         <Button Click="btnRedact_Click" x:Name="btnRedact" Content="Редактирование" HorizontalAlignment="Left" Margin="544,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
         <Button x:Name="BtnPolzovatel" Content="Добавить нового пользователя" HorizontalAlignment="Left" Margin="22,17,0,0" Grid.Row="1" VerticalAlignment="Top" Click="BtnPolzovatel_Click"/>
+        <Button x:Name="btnOtchet" Content="Отчет" HorizontalAlignment="Left" Margin="732,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="40" ButtonBase.Click="btnOtchet_Click"/>
     </Grid>
 </Window>

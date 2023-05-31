@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +102,64 @@ namespace DiplomHus.Windows
         {
             Window window = new Register();
             window.ShowDialog();
+        }
+        //Запуск Exelw
+        private void btnOtchet_Click(object sender, object e)
+        {
+            var dialog = new SaveFileDialog { DefaultExt = "xlsx" };
+            var res = dialog.ShowDialog(this);
+            if (res == true)
+            {
+                CreateExcelReport(Zayavki, dialog.FileName);
+                MessageBox.Show("Отчет сохранен");
+            }
+        }
+
+        private void CreateExcelReport(Collection<Report> zayavkas, string savePath)
+        {
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Отчет");
+
+                // Заголовки столбцов
+                worksheet.Cells[1, 1].Value = "ID Заявки";
+                worksheet.Cells[1, 2].Value = "ID Пользователя";
+                worksheet.Cells[1, 3].Value = "ID Типа";
+                worksheet.Cells[1, 4].Value = "ID Оборудования";
+                worksheet.Cells[1, 5].Value = "ID Места ремонта";
+                worksheet.Cells[1, 6].Value = "ID Статуса";
+                worksheet.Cells[1, 7].Value = "Телефон";
+                worksheet.Cells[1, 8].Value = "Дата";
+                worksheet.Cells[1, 9].Value = "Описание";
+                worksheet.Cells[1, 10].Value = "Комментарий";
+                worksheet.Cells[1, 11].Value = "Мастер";
+
+                // Данные
+                int row = 2;
+                foreach (Report zayavka in zayavkas)
+                {
+                    worksheet.Cells[row, 1].Value = zayavka.ID_Zayavka;
+                    worksheet.Cells[row, 2].Value = zayavka.ID_User;
+                    worksheet.Cells[row, 3].Value = zayavka.ID_Type;
+                    worksheet.Cells[row, 4].Value = zayavka.ID_Oboryduvanie;
+                    worksheet.Cells[row, 5].Value = zayavka.ID_MestoRemonta;
+                    worksheet.Cells[row, 6].Value = zayavka.ID_Status;
+                    worksheet.Cells[row, 7].Value = zayavka.Phone;
+                    worksheet.Cells[row, 8].Value = $"{zayavka.Date:dd.MM.yyyy}" ;
+                    worksheet.Cells[row, 9].Value = zayavka.Opisanie;
+                    worksheet.Cells[row, 10].Value = zayavka.ComentsFinishWork;
+                    worksheet.Cells[row, 11].Value = zayavka.MasterName;
+
+                    row++;
+                }
+
+                // Автонастройка ширины столбцов
+                worksheet.Cells.AutoFitColumns();
+
+                // Сохранение файла
+                FileInfo fileInfo = new FileInfo(savePath);
+                excelPackage.SaveAs(fileInfo);
+            }
         }
     }
 }

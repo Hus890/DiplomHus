@@ -1,11 +1,11 @@
-﻿<Window x:Class="DiplomHus.Windows.Register"
+﻿<Window x:Class="DiplomHus.Windows.RedactUser"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
         mc:Ignorable="d"
-        Background="AliceBlue" Height="450" Width="400">
+        Title="RedactUser" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -15,19 +15,19 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="105.293"/>
         </Grid.RowDefinitions>
-        <Label Content="Регистрация нового работника" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+        <Label Content="Редактирование пользователя" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
         <Label Content="Выберите роль" HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Top" Grid.Row="1"/>
         <Label Content="Введите Фио:" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
         <Label Content="Введите Логин:" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
         <Label Content="Введите Пароль:" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="4" VerticalAlignment="Center"/>
-        <Button x:Name="btnAdd" Content="Добавить" Background="LightBlue" HorizontalAlignment="Left" Margin="42,33,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" Width="117" Click="btnAdd_Click"/>
-        <Button Content="Очистка" Background="LightBlue" HorizontalAlignment="Left" Margin="178,33,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" Width="116" Click="Button_Click"/>
+        <Button x:Name="btnAdd" Content="Ок" Background="LightBlue" HorizontalAlignment="Left" Margin="42,33,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" Width="117" Click="btnAdd_Click"/>
+        <Button Content="Отмена" Background="LightBlue" HorizontalAlignment="Left" Margin="180,33,0,0" Grid.Row="5" VerticalAlignment="Top" Height="29" Width="117" Click="Button_Click"/>
         <ComboBox  Background="LightBlue" SelectedItem="{Binding SelectedRole}" ItemsSource="{Binding Roles}" HorizontalAlignment="Left" Margin="59,26,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tbName" Text="{Binding FirstName}" HorizontalAlignment="Left" Margin="119,0,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Center" Width="72"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Login}" Margin="171,0,0,0" Grid.Row="3" TextWrapping="Wrap"  VerticalAlignment="Center" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Password}" Margin="171,0,0,0" Grid.Row="4" TextWrapping="Wrap"  VerticalAlignment="Center" Width="120"/>
-        <TextBox x:Name="tbSurname" Text="{Binding SecondName}" HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Center" Width="72"/>
-        <TextBox x:Name="tbPatronomic" Text="{Binding Patronomyc}" HorizontalAlignment="Left" Margin="293,0,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Center" Width="81"/>
+        <TextBox x:Name="tbName" Text="{Binding EditUser.Name}" HorizontalAlignment="Left" Margin="119,0,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Center" Width="72"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding EditUser.Login}" Margin="171,0,0,0" Grid.Row="3" TextWrapping="Wrap"  VerticalAlignment="Center" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding EditUser.Password}" Margin="171,0,0,0" Grid.Row="4" TextWrapping="Wrap"  VerticalAlignment="Center" Width="120"/>
+        <TextBox x:Name="tbSurname" Text="{Binding EditUser.Surname}" HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Center" Width="72"/>
+        <TextBox x:Name="tbPatronomic" Text="{Binding EditUser.Patronomyc}" HorizontalAlignment="Left" Margin="293,0,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Center" Width="81"/>
         <ComboBox HorizontalAlignment="Left" Margin="263,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Podrazdelenies}"
                     SelectedItem="{Binding SelectedPodrazdelenie}" />
         <Label Content="Подразделение" HorizontalAlignment="Left" Margin="275,67,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
