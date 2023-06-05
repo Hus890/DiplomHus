@@ -34,7 +34,7 @@
         <Label Content="Подразделение:"  HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
         <TextBox Background="LightBlue" x:Name="tbPodrazdelenie" IsReadOnly="True" Text="{Binding AuthorizatedUser.Podrazdelenie.Name}" HorizontalAlignment="Left" Margin="154,30,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="151"/>
         <Label Content="ФИО" HorizontalAlignment="Left" Margin="310,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBox  Background="LightBlue" HorizontalAlignment="Left" IsReadOnly="True" Margin="373,0,0,0" Grid.Row="1" TextWrapping="Wrap" x:Name="tbFio" VerticalAlignment="Center" Height="40" Width="173">
+        <TextBox  Background="LightBlue" HorizontalAlignment="Left" IsReadOnly="True" Margin="373,0,0,0" Grid.Row="1" TextWrapping="Wrap" x:Name="tbFio" VerticalAlignment="Center" Height="60" Width="173">
             <TextBox.Text>
                 <MultiBinding StringFormat="{}{0} {1} {2}">
                     <Binding Path="AuthorizatedUser.Name" />

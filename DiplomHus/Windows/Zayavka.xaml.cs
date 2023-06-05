@@ -59,7 +59,7 @@ namespace DiplomHus.Windows
                     Podrazdelenie = User.Podrazdelenie
                 },
                 ComentsFinishWork = string.Empty,
-                MasterName = string.Empty
+                MasterName = null
             };
             dp_hus_dipEntities2.GetContext().Zayavka.Add(newZayavka);
             dp_hus_dipEntities2.GetContext().SaveChanges();

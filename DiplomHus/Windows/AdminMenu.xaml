@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
         mc:Ignorable="d"
-        Title="Меню Администратора" Icon="/Октябрь-Нейва.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="400" Width="400" FontFamily="Comic Sans MS" FontSize="18">
+        Title="Меню Администратора" Background="AliceBlue" Icon="/Октябрь-Нейва.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="400" Width="400" FontFamily="Comic Sans MS" FontSize="18">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="49*"/>

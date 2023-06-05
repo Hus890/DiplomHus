@@ -80,7 +80,7 @@ namespace DiplomHus.Windows
 
         private void tbFio_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //-------------------------------
+            //
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

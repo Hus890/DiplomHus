@@ -76,44 +76,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DipHUS.Context.cs">
+    <Compile Include="DP_HUS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DipHUS.Context.tt</DependentUpon>
+      <DependentUpon>DP_HUS.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DipHUS.cs">
+    <Compile Include="DP_HUS.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
-    <Compile Include="DipHUS.Designer.cs">
+    <Compile Include="DP_HUS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DipHUS.edmx</DependentUpon>
+      <DependentUpon>DP_HUS.edmx</DependentUpon>
     </Compile>
+    <Compile Include="IdMasterConverter.cs" />
     <Compile Include="MestoRemonta.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Compile Include="Oboryduvanie.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Compile Include="Podrazdelenie.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DP_HUS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Compile Include="Status.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Compile Include="Type.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Compile Include="Windows\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
@@ -140,7 +147,7 @@
       <DependentUpon>Zayavka.xaml</DependentUpon>
     </Compile>
     <Compile Include="Zayavka.cs">
-      <DependentUpon>DipHUS.tt</DependentUpon>
+      <DependentUpon>DP_HUS.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -205,12 +212,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DipHUS.edmx">
+    <EntityDeploy Include="DP_HUS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DipHUS.Designer.cs</LastGenOutput>
+      <LastGenOutput>DP_HUS.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DipHUS.edmx.diagram">
-      <DependentUpon>DipHUS.edmx</DependentUpon>
+    <None Include="DP_HUS.edmx.diagram">
+      <DependentUpon>DP_HUS.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -231,15 +238,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DipHUS.Context.tt">
+    <Content Include="DP_HUS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DipHUS.edmx</DependentUpon>
-      <LastGenOutput>DipHUS.Context.cs</LastGenOutput>
+      <DependentUpon>DP_HUS.edmx</DependentUpon>
+      <LastGenOutput>DP_HUS.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DipHUS.tt">
+    <Content Include="DP_HUS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DipHUS.edmx</DependentUpon>
-      <LastGenOutput>DipHUS.cs</LastGenOutput>
+      <DependentUpon>DP_HUS.edmx</DependentUpon>
+      <LastGenOutput>DP_HUS.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

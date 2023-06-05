@@ -34,9 +34,14 @@ namespace DiplomHus.Windows
         public Admin()
         {
             InitializeComponent();
+            cmbStatus.ItemsSource = dp_hus_dipEntities2.GetContext().Status.ToList();
+            cmbMaster.ItemsSource = dp_hus_dipEntities2.GetContext().User
+                .Where(x => x.Role.Name == "Master")
+                .ToList();
             dgZayavki.Items.Clear();
             Zayavki = new ObservableCollection<Report>(dp_hus_dipEntities2.GetContext().Zayavka);
             dgZayavki.ItemsSource = Zayavki;
+            dgZayavki.SelectedIndex = Zayavki.Any() ? 0 : -1;
             DataContext = this;
         }
 
@@ -165,6 +170,26 @@ namespace DiplomHus.Windows
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void dgZayavki_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cmbStatus.SelectedItem = (cmbStatus.ItemsSource as IEnumerable<Status>).FirstOrDefault(x => x.ID_Status == SelectedReport?.ID_Status);
+            cmbMaster.SelectedItem = (cmbMaster.ItemsSource as IEnumerable<User>).FirstOrDefault(x => x.ID_User == SelectedReport?.MasterName);
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            if (SelectedReport == null)
+            {
+                MessageBox.Show("Выберите заявку");
+                return;
+            }
+
+            SelectedReport.Status = cmbStatus.SelectedItem as Status;
+            SelectedReport.MasterName = (cmbMaster.SelectedItem as User).ID_User;
+            dp_hus_dipEntities2.GetContext().SaveChanges();
+            UpdateZayavki();
         }
     }
 }

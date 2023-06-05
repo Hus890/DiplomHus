@@ -4,17 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
+        xmlns:cnv="clr-namespace:DiplomHus"
         mc:Ignorable="d"
          Background="AliceBlue" ResizeMode="NoResize" Icon="/Октябрь-Нейва.jpg" WindowStartupLocation="CenterScreen"  Height="400" Width="450" FontFamily="Comic Sans MS" FontSize="18">
+    <Window.Resources>
+        <cnv:IdMasterConverter x:Key="Convert" />
+    </Window.Resources>
     <Grid>
         <ComboBox Width="236" Height="30"  Background="LightBlue" x:Name="cmbStatus" ItemsSource="{Binding Statuses}" SelectedItem="{Binding SelectedStatus}" HorizontalAlignment="Left" Margin="184,88,0,0" VerticalAlignment="Top" />
         <Label Content="Выберите тип:" HorizontalAlignment="Left" Margin="14,85,0,0" VerticalAlignment="Top"/>
         <Label Content="Ремонт:" HorizontalAlignment="Left" Margin="15,146,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TbRemont" Text="{Binding Zayavka.ComentsFinishWork}" HorizontalAlignment="Left" Margin="120,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="78"/>
+        <TextBox  x:Name="TbRemont" Text="{Binding Zayavka.ComentsFinishWork}" HorizontalAlignment="Left" Margin="120,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="78"/>
         <Button Width="150" Height="30"  Background="LightBlue" Click="Button_Click" Content="Ок" HorizontalAlignment="Left" Margin="27,331,0,0" VerticalAlignment="Top" />
         <Button Width="150" Height="30"  Background="LightBlue" Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" Margin="260,331,0,0" VerticalAlignment="Top"/>
         <Label Content="Мастер:" HorizontalAlignment="Left" Margin="14,238,0,0" VerticalAlignment="Top"/>
-        <TextBox Width="300" Height="30"  Background="LightBlue" x:Name="tbMaster" Text="{Binding Zayavka.MasterName}" HorizontalAlignment="Left" Margin="120,241,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" />
+        <TextBox IsReadOnly="True" Width="300" Height="30"  Background="LightBlue" x:Name="tbMaster" Text="{Binding Zayavka.MasterName, Converter={StaticResource Convert} }" HorizontalAlignment="Left" Margin="120,241,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" />
         <Label Content="Выполнение работ" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,18,0,0"/>
     </Grid>
 </Window>

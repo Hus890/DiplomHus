@@ -47,10 +47,10 @@ namespace DiplomHus
             }
             else if (queryUser.Role.Name == "User")
             {
+                // открываем окно заказчика
                 var newWnd = new Zakaz(queryUser) { Owner = this };
                 newWnd.Show();
                 this.Hide();
-                // открываем окно заказчика
             }
         }
     }

@@ -24,7 +24,7 @@ namespace DiplomHus
         public System.DateTime Date { get; set; }
         public string Opisanie { get; set; }
         public string ComentsFinishWork { get; set; }
-        public string MasterName { get; set; }
+        public Nullable<int> MasterName { get; set; }
     
         public virtual MestoRemonta MestoRemonta { get; set; }
         public virtual Oboryduvanie Oboryduvanie { get; set; }

@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiplomHus.Windows"
+        xmlns:cnv="clr-namespace:DiplomHus"
         mc:Ignorable="d"
-        Title="Просмотр заявок"  Icon="/Октябрь-Нейва.jpg" WindowStartupLocation="CenterScreen" Background="AliceBlue" Height="500" Width="800" FontFamily="Comic Sans MS" FontSize="16">
+        Title="Просмотр заявок"  Icon="/Октябрь-Нейва.jpg" WindowStartupLocation="CenterScreen" Background="AliceBlue" Height="500" Width="1200" FontFamily="Comic Sans MS" FontSize="16">
+    <Window.Resources>
+        <cnv:IdMasterConverter x:Key="Convert" />
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="52*"/>
@@ -13,8 +17,9 @@
             <RowDefinition Height="279*"/>
             <RowDefinition Height="60*"/>
         </Grid.RowDefinitions>
-        <DataGrid Background="LightBlue" AutoGenerateColumns="False" Grid.Row="2" Name="dgZayavki" ItemsSource="{Binding Zayavki}" ColumnWidth="*"
+        <DataGrid SelectionChanged="dgZayavki_SelectionChanged" Background="LightBlue" AutoGenerateColumns="False" Grid.Row="2" Name="dgZayavki" ItemsSource="{Binding Zayavki}" ColumnWidth="*"
             SelectedItem="{Binding SelectedReport}" IsReadOnly="True" Margin="20">
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Zayavka}" />
                 <DataGridTextColumn Header="Заказчик" Binding="{Binding User.Name}" />
@@ -23,7 +28,7 @@
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" />
                 <DataGridTextColumn Header="Дата" Binding="{Binding Date,StringFormat=dd.MM.yyyy}" />
                 <DataGridTextColumn Header="Инвентарный номер" Binding="{Binding Oboryduvanie.InventoryNumber}" />
-                <DataGridTextColumn Header="Исполнитель" Binding="{Binding MasterName}" />
+                <DataGridTextColumn Header="Исполнитель" Binding="{Binding MasterName, Converter={StaticResource Convert}}" />
                 <DataGridTextColumn Header="Комментарий по проделанной работе" Binding="{Binding ComentsFinishWork}" />
             </DataGrid.Columns>
         </DataGrid>
@@ -34,5 +39,10 @@
         <Button Width="150" Height="30"  Background="LightBlue" x:Name="btnOtchet" Content="Отчет" HorizontalAlignment="Right" Margin="20,15,15,15" Grid.Row="3" VerticalAlignment="Top" ButtonBase.Click="btnOtchet_Click"/>
         <Label Content="Просмотр заявок пользователей" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="20"/>
         <Button x:Name="btnBack"  Width="150" Height="30"  Background="LightBlue" Content="Назад" HorizontalAlignment="Left" Margin="450,15,15,15" Grid.Row="3" VerticalAlignment="Top" Click="btnBack_Click"/>
+        <ComboBox  Width="150" Height="30" x:Name="cmbStatus" HorizontalAlignment="Left" Margin="344,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <ComboBox  Width="245" Height="30" x:Name="cmbMaster" HorizontalAlignment="Left" Margin="588,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <Label Content="Статус:" HorizontalAlignment="Left" Margin="275,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <Label Content="Мастер:" HorizontalAlignment="Left" Margin="513,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <Button Width="150" x:Name="btnUpdate" Height="30" Content="Применить" HorizontalAlignment="Left" Margin="970,0,0,0" Grid.Row="1" Background="LightBlue" VerticalAlignment="Center" Click="btnUpdate_Click"/>
     </Grid>
 </Window>
